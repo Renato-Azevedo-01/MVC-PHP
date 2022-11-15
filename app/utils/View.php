@@ -23,16 +23,16 @@ class View{
     public static function render($view, $vars = []){
         //RETORNA O CONTEÚDO DA VIEW
         $contentView = self::getContentView($view);
+        
         //CHAVES DO ARRAY DE VARIÁVEIS
         $keys = array_keys($vars);
         $keys = array_map(function($item){
             return "{{" . $item . "}}";
         }, $keys);
-        #var_dump($keys);
-
+                
         //RETORNA O CONTEÚDO RENDERIZADO
         //Vai substituir os VALORES referentes às KEYS (NAME e DESCRIPTION), 
-        //na STRING BASE que é a CONTENTVIEW
+        //na STRING BASE que é a CONTENTVIEW (Conteúdo da View).
         return str_replace($keys,array_values($vars),$contentView);
     }   
 }
