@@ -1,8 +1,20 @@
 <?php
-
 namespace App\Utils;
-
 class View{
+
+    /**
+     * VARIÁVEIS PADRÕES DA VIEW
+     */
+    private static $vars = [];
+
+    /**
+     * VAI RECEBER UMAS VARIÁVEIS QUE VAI DEFINIR AS VARIÁVEIS "PADRÃO" DENTRO DA
+     * NOSSA VIEW , OU SEJA, DEFINIR OS DADOS INICIAIS DA CLASSE
+     * @param array $vars
+     */
+    public static function init($vars = []){
+        self::$vars = $vars;
+    }
 
     /**
      * Método responsável por retornar o conteúdo de uma view
@@ -23,6 +35,8 @@ class View{
     public static function render($view, $vars = []){
         //RETORNA O CONTEÚDO DA VIEW
         $contentView = self::getContentView($view);
+
+        $vars = array_merge(self::$vars,$vars);
         
         //CHAVES DO ARRAY DE VARIÁVEIS
         $keys = array_keys($vars);
