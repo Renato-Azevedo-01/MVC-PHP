@@ -8,7 +8,7 @@ class Organization {
 
     public $site = "https://renato.com.br";
 
-    public $description = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita est error mollitia voluptate officiis dignissimos ea deleniti, aspernatur libero cupiditate vel similique, amet harum? Minima ad sit veniam voluptate suscipit.";
+    public $description = "Projeto MVC em PHP para facilitar a divisão de esforços em relação às áreas Front-end, Back-end, Design, BD e outras";
 }
 
 ?>
